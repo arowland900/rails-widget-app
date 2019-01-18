@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   root to: "widgets#index"
 
+  get "/", to: "widgets#index"
+  
   get "widgets/" => "widgets#index"
 	get "widgets/new" => "widgets#new", as: :new_widget
   get "widgets/:id" => "widgets#show", as: :widget
