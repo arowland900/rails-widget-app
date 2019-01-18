@@ -1,0 +1,12 @@
+<h1>Wacky Widgets</h1>
+
+<ul>
+    <% @widgets.each do |widget| %>
+        <li>
+            <strong> <%= widget.description %> </strong> - <%= widget.quantity %>
+            <%= link_to "More info", widget_path(widget) %>
+        </li>
+    <% end %>
+    <br>
+    <%= link_to "Add a bean!", new_widget_path %>
+</ul>
