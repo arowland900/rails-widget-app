@@ -1,5 +1,6 @@
-<h1>Wacky Widgets</h1>
-
+<h1 class="jumbotrom text-center">Wacky Widgets</h1>
+<hr>
+<% if @widgets.length > 0 %>
 <ul>
     <% @widgets.each do |widget| %>
         <li>
@@ -10,3 +11,7 @@
     <br>
     <%= link_to "Add a bean!", new_widget_path %>
 </ul>
+
+<% else %>
+    <h4>No Widgets Exist</h4>
+<% end %>
