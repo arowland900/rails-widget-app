@@ -3,6 +3,7 @@ class WidgetsController < ApplicationController
 
     def index
         @widgets = Widget.all
+        @widget = Widget.new
     end
 
     def show

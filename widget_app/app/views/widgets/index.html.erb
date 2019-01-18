@@ -1,17 +1,36 @@
-<h1 class="jumbotrom text-center">Wacky Widgets</h1>
-<hr>
-<% if @widgets.length > 0 %>
-<ul>
-    <% @widgets.each do |widget| %>
-        <li>
-            <strong> <%= widget.description %> </strong> - <%= widget.quantity %>
-            <%= link_to "More info", widget_path(widget) %>
-        </li>
+<div class="container">
+    <h1 class="jumbotron text-center">Wacky Widgets</h1>
+    <% if @widgets.length > 0 %>
+        <ul>
+            <% @widgets.each do |widget| %>
+                <li>
+                    <strong> <%= widget.description %> </strong> - <%= widget.quantity %>
+                    <%= link_to "More info", widget_path(widget) %>
+                </li>
+            <% end %>
+            <br>
+            <%= link_to "Add a bean!", new_widget_path %>
+        </ul>
+    <% else %>
+        <h3 class='text-center'>No Widgets Exist</h3>
     <% end %>
-    <br>
-    <%= link_to "Add a bean!", new_widget_path %>
-</ul>
 
-<% else %>
-    <h4>No Widgets Exist</h4>
-<% end %>
+
+    <hr>
+    <h4>Add a New Widget:</h4>
+    <div class="form-group">
+        <%= form_for @widget do |f| %>
+            <div>
+                <%= f.label :description %>
+                <%= f.text_field :description %>
+            </div>
+            <div>
+                <%= f.label :quantity %>
+                <%= f.text_field :quantity %>
+            </div>
+            <%= f.submit "Add new bean!" %>
+        <% end %>
+    </div>
+
+
+</div>
