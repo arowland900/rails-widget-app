@@ -22,13 +22,13 @@
         <%= form_for @widget do |f| %>
             <div>
                 <%= f.label :description %>
-                <%= f.text_field :description %>
+                <%= f.text_field :description, class: "form-control" %>
             </div>
             <div>
                 <%= f.label :quantity %>
-                <%= f.text_field :quantity %>
+                <%= f.text_field :quantity, class: "form-control"  %>
             </div>
-            <%= f.submit "Add new bean!" %>
+            <%= f.submit "Add Widget!", class: "btn btn-success" %>
         <% end %>
     </div>
 
