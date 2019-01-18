@@ -3,7 +3,7 @@ class WidgetsController < ApplicationController
 
     def index
         @widgets = Widget.all
-        @widget = Widget.new
+        @newwidget = Widget.new
     end
 
     def show
@@ -20,23 +20,10 @@ class WidgetsController < ApplicationController
         if @widget.save
             redirect_to widgets_path
         else
-            render :new
-        end
-    end
-
-    def edit
-        @widget = Widget.find(params[:id])
-    end
-
-    def update
-        @widget = Widget.find(params[:id])
-
-        if @widget.update_attributes(widget_params)
             redirect_to widgets_path
-        else
-            render :edit
         end
     end
+
 
     def destroy
         @widget = Widget.find(params[:id])

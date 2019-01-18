@@ -3,30 +3,27 @@
     <% if @widgets.length > 0 %>
         <table>
             <tr>
-                <th>Firstname</th>
-                <th>Lastname</th> 
-                <th>Age</th>
+                <th>Description</th>
+                <th>Quantity</th> 
+                <th>Remove</th>
             </tr>
+            <% @widgets.each do |w|%>
             <tr>
-                <td>Jill</td>
-                <td>Smith</td> 
-                <td>50</td>
+                <td><%= w.description %></td>
+                <td><%= w.quantity %></td>
+                <td><%= link_to 'X',  widget_path(w),  method: :delete, class: "btn btn-xs btn-danger" %></td>
             </tr>
-            <tr>
-                <td>Eve</td>
-                <td>Jackson</td> 
-                <td>94</td>
-            </tr>
+           
+            <% end %>
         </table>
     <% else %>
         <h3 class='text-center'>No Widgets Exist</h3>
     <% end %>
 
-
     <hr>
     <h4>Add a New Widget:</h4>
     <div class="form-group">
-        <%= form_for @widget do |f| %>
+        <%= form_for @newwidget do |f| %>
             <div>
                 <%= f.label :description %>
                 <%= f.text_field :description, class: "form-control" %>
