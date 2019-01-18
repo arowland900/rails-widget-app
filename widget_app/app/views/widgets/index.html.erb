@@ -1,16 +1,23 @@
 <div class="container">
     <h1 class="jumbotron text-center">Wacky Widgets</h1>
     <% if @widgets.length > 0 %>
-        <ul>
-            <% @widgets.each do |widget| %>
-                <li>
-                    <strong> <%= widget.description %> </strong> - <%= widget.quantity %>
-                    <%= link_to "More info", widget_path(widget) %>
-                </li>
-            <% end %>
-            <br>
-            <%= link_to "Add a bean!", new_widget_path %>
-        </ul>
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th> 
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td> 
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td> 
+                <td>94</td>
+            </tr>
+        </table>
     <% else %>
         <h3 class='text-center'>No Widgets Exist</h3>
     <% end %>

@@ -15,7 +15,7 @@ class WidgetsController < ApplicationController
     end
 
     def create
-        @widget = Widget.new(bean_params)
+        @widget = Widget.new(widget_params)
       
         if @widget.save
             redirect_to widgets_path
